@@ -1,0 +1,102 @@
+
+Modified
+========
+1. pom.xml
+2. FlightSearchRequest
+3. FlightServicesMain
+
+Removed
+=======
+1. FlightSearchServiceTest
+
+==============================================================================================
+URL - http://locallhost:8080/flight/searchflights
+
+#S1 : When Passenger Count is - 0 from Request
+
+Request
+-------
+{
+  "departureDate": "2019-08-27",
+  "destination": "Delhi",
+  "passengerCount": 0,
+  "source": "Hyderabad",
+  "travelClass": "ECONOMY"
+}
+
+Response
+---------
+{
+  "status": "SUCCESS",
+  "availableFlights": [
+    {
+      "flightNo": "F0001",
+      "name": "Boeing 777-200LR(77L)",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 7800
+    },
+    {
+      "flightNo": "F0002",
+      "name": "Airbus A319 V2",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 4000
+    },
+    {
+      "flightNo": "F0003",
+      "name": "Airbus A321",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 5000
+    }
+  ]
+}
+
+#S2 : When Passenger Count is not presented from Request
+
+Request
+-------
+{
+  "departureDate": "2019-08-27",
+  "destination": "Delhi",
+  "source": "Hyderabad",
+  "travelClass": "ECONOMY"
+}
+
+Response
+---------
+{
+  "status": "SUCCESS",
+  "availableFlights": [
+    {
+      "flightNo": "F0001",
+      "name": "Boeing 777-200LR(77L)",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 7800
+    },
+    {
+      "flightNo": "F0002",
+      "name": "Airbus A319 V2",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 4000
+    },
+    {
+      "flightNo": "F0003",
+      "name": "Airbus A321",
+      "origin": "Hyderabad",
+      "destination": "Delhi",
+      "travelType": "ECONOMY",
+      "totalFare": 5000
+    }
+  ]
+}
+
+
